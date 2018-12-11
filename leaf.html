@@ -66,3 +66,68 @@ var mymap = L.map('mapid').setView([37.063383, -76.496], 13);
 
 </body>
 </html>
+
+
+<html>
+  <head >Matt Payne - 480<br><br></head>
+<body>
+
+<form id="frm1" >
+  Noun: <input type="text" name="noun1" value="noun"><br>
+  Noun: <input type="text" name="noun2" value="noun"><br>
+  adjective: <input type="text" name="adj" value="adjective"><br>
+  Verb: <input type="text" name="verb2" value="verb"><br>
+  Verb: <input type="text" name="verb1" value="verb"><br>
+  Number: <input type="text" name="number" value="#"><br><br>
+</form>
+
+<p>Click "Try it" to display your madlib</p>
+
+<button onclick="myFunction()">Try it</button>
+
+
+<p id="demo"></p>
+
+
+
+<script src="madlibs.js">
+</script>
+
+</body>
+</html>
+
+
+function myFunction() {
+    var num = Math.floor(Math.random() * 6);
+    //var num = madlib();
+    //document.getElementById("demo").innerHTML = num;
+    var x = document.getElementById("frm1");
+
+    var noun = x.elements[0].value;
+
+    var adjective = x.elements[2].value;
+    var secondnoun = x.elements[1].value;
+
+    var verb1 = x.elements[3].value;
+    var verb2 = x.elements[4].value;
+    var number = x.elements[5].value;
+    if (num == 0){
+      var finaltext = "the" + " " + adjective +" "+ noun +" "+ verb1 +" down the road, right next to the  " + secondnoun + " , who was " + verb2  + " much faster than " + noun;
+      document.getElementById("demo").innerHTML = finaltext;
+    } else if (num == 1) {
+      var finaltext = secondnoun + " was " + adjective +" "+ verb2 + " away from you, and while doing that, he saw " + noun +" "+ verb1;
+      document.getElementById("demo").innerHTML = finaltext;
+    } else if (num == 2) {
+      var finaltext = number +" "+ adjective +" "+ noun +" "+ verb1;
+      document.getElementById("demo").innerHTML = finaltext;
+    } else if (num == 3) {
+      var finaltext = "As I was running to the school, I saw, "+ number+" "+noun+" down by the river";
+      document.getElementById("demo").innerHTML = finaltext;
+    } else if (num == 4) {
+      var finaltext = secondnoun +" was going to the store and saw " +noun+" after that, they both went to the movies and had "+number+" ice cream cones";
+      document.getElementById("demo").innerHTML = finaltext;
+    } else if (num == 5) {
+      var finaltext = verb +" "+ number+" mile, and bike 3 miles, " +secondnoun;
+      document.getElementById("demo").innerHTML = finaltext;
+    }
+}
